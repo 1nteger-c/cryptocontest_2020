@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+from fastecdsa import curve, ecdsa, keys
+
+d = 0xbea4fd03c804ea0160a096f4c6b438d54ab78458e124e8f68d42cd7010807a1b
+
+pub = keys.get_public_key(d, curve.P256)
+
+x = 0xF44CD6277CED3F9CC2F29144CDBCFDC40F1BF556707ED8190E838D711A12EC03
+y = 0x68B6FAF59BEC47A11D98800B4BE578CA4399B34EF94D6B602F5186D41B7430C9
+
+if pub.x == x and pub.y == y:
+    print("VALID SUCCESS")
